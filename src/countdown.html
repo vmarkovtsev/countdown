@@ -1,0 +1,60 @@
+<!DOCTYPE html><html>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!-- build:css css/site.min.css -->
+  <link rel="stylesheet" type="text/css" href="../build/css/bootstrap-sass.css" />
+  <link rel="stylesheet" type="text/css" href="../build/css/countdown.css" />
+  <!-- endbuild -->
+</head><body>
+  {% macro digit(series, index) %}
+    <svg class='digit' xmlns="http://www.w3.org/2000/svg">
+      <use xlink:href="img/countdown.svg#cd_{{ index }}_{{ series }}" />
+    </svg>
+  {% endmacro %}
+  {% macro digits(base, size) %}
+    <div class='digit-wrapper'>
+      {{ digit(base, 0) }}
+      {% for i in range(size) | reverse %}
+        {{ digit(base, i) }}
+      {% endfor %}
+    </div>
+  {% endmacro %}
+<div class='countdown-container'>
+  <div class='countdown-part-container'>
+    <div class='countdown-part hours tens'>
+      {{ digits(0, 3) }}
+    </div>
+    <div class='countdown-part hours ones'>
+      {{ digits(1, 10) }}
+    </div>
+  </div>
+  <div class='countdown-delimiter'>:</div>
+  <div class='countdown-part-container'>
+    <div class='countdown-part minutes tens'>
+      {{ digits(2, 6) }}
+    </div>
+    <div class='countdown-part minutes ones'>
+      {{ digits(3, 10) }}
+    </div>
+  </div>
+  <div class='countdown-delimiter'>:</div>
+  <div class='countdown-part-container'>
+    <div class='countdown-part seconds tens'>
+      {{ digits(4, 6) }}
+    </div>
+    <div class='countdown-part seconds ones'>
+      {{ digits(5, 10) }}
+    </div>
+  </div>
+</div>
+<!-- build:js_entry js/entry.min.js -->
+<script type="text/javascript" src="libs/modernizr/modernizr.js"></script>
+<script type="text/javascript" src="../build/js/countdown.js"></script>
+<!-- endbuild -->
+<!-- build:js_libs js/libs.min.js -->
+<script type="text/javascript" src="libs/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript"
+        src="libs/bootstrap-sass-official/assets/javascripts/bootstrap.min.js"></script>
+<!-- endbuild -->
+</body></html>

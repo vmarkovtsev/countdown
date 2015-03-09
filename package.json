@@ -1,0 +1,29 @@
+{
+    "devDependencies": {
+        "bower": ">=1.3.12",
+        "browserify": ">=9.0.0",
+        "babelify": "*",
+        "through2": "*",
+        "gulp": ">=3.8.11",
+        "gulp-load-plugins": "*",
+        "gulp-bower": "*",
+        "gulp-rimraf": "*",
+        "gulp-concat": "*",
+        "gulp-usemin": "*",
+        "gulp-uglify": "*",
+        "gulp-minify-html": "*",
+        "gulp-minify-css": "*",
+        "gulp-sass": "*",
+        "gulp-sourcemaps": "*",
+        "gulp-autoprefixer": "*",
+        "gulp-open": "*",
+        "gulp-newer": "*",
+        "gulp-imagemin": "*",
+        "gulp-svgmin": "*",
+        "gulp-svgstore": "*",
+        "gulp-rename": "*",
+        "gulp-replace": "*",
+        "gulp-nunjucks-html": ">=1.1.2",
+        "imagemin-pngquant": "*"
+    }
+}
